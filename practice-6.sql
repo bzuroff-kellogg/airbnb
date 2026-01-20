@@ -14,5 +14,7 @@
 -- | Bridgeport             | 5559     |
 -- | Brighton Park          | 678      |
 -- | Burnside               | 10       |
-
-
+select neighborhood, count(reviews.id)
+from reviews
+left join listings on listings.id = reviews.listing_id
+group by neighborhood
